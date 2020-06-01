@@ -1,8 +1,13 @@
 import requests
 
-resp = requests.get('https://reqres.in/api/users/1')
-if resp.status_code != 200:
+resp = requests.get('https://reqres.in/api/users/2')
+print(resp.text)
+
+#if resp.status_code == 200:
     # This means something went wrong.
-    raise ApiError('GET /tasks/ {}'.format(resp.status_code))
-for todo_item in resp.json():
-    print('{} {}'.format(first_name, last_name))
+    #raise ApiError('GET /user/ {}'.format(resp.status_code))
+    #print('Success!')
+#elif resp.status_code != 200:
+#    print('Not Found.')
+#for data in resp.json():
+#    print('{} {}'.format(first_name, last_name))
