@@ -1,5 +1,5 @@
 import requests
-import json
+
 
 r = requests.get("https://reqres.in/api/users")
 r_dict = r.json()
