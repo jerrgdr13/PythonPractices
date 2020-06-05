@@ -1,13 +1,23 @@
 import requests
+import json
 
-resp = requests.get('https://reqres.in/api/users/2')
-print(resp.text)
+r = requests.get("https://reqres.in/api/users")
+r_dict = r.json()
 
-#if resp.status_code == 200:
-    # This means something went wrong.
-    #raise ApiError('GET /user/ {}'.format(resp.status_code))
-    #print('Success!')
-#elif resp.status_code != 200:
-#    print('Not Found.')
-#for data in resp.json():
-#    print('{} {}'.format(first_name, last_name))
+
+#print(r_dict['data'][1]['first_name'])
+#print(r.text)
+count = 0
+inp = input('type a number:  ')
+num = int(inp)
+tim = 0
+while (count < num ):
+    fname = r_dict['data'][tim]['first_name']
+    lname = r_dict['data'][tim]['last_name']
+    fullname = fname+" "+lname
+    print(fullname)
+    tim = tim +1
+    count = count +1
+print("**************")
+print("completed")
+
